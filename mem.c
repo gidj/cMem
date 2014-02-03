@@ -34,6 +34,16 @@ extern void* mem_calloc(size_t count, size_t nbytes, const char *file, int line)
   return ptr;
 }
 
-extern void mem_free(void *ptr, const char *file, int line);
+extern void mem_free(void *ptr, const char *file, int line)
+{
+  if (ptr)
+  {
+    free(ptr);
+  }
+}
 
-extern void* mem_resize(void *ptr, size_t nbytes, const char *file, int line);
+extern void* mem_resize(void *ptr, size_t nbytes, const char *file, int line)
+{
+
+}
+
