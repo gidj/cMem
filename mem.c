@@ -44,6 +44,16 @@ extern void mem_free(void *ptr, const char *file, int line)
 
 extern void* mem_resize(void *ptr, size_t nbytes, const char *file, int line)
 {
+  assert(ptr);
+  assert(nbytes > 0);
 
+  ptr = realloc(ptr, nbytes);
+  if (!ptr)
+  {
+    printf("Memory was not allocated. Exiting...\n");
+    exit(EXIT_FAILURE);
+  }
+
+  return ptr;
 }
 
